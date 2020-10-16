@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Landing from "./pages/Landing"
-import Orphanages from "./pages/orphanagesMap"
+import OrphanagesMap from "./pages/orphanagesMap"
+import Orphanage from './pages/Orphanage';
+import CreateOrphanage from './pages/CreateOrphanage';
 
 
 function Routes(){
@@ -9,7 +11,9 @@ function Routes(){
         <BrowserRouter>
             <Switch>
                 <Route path="/"  exact component={Landing}/>
-                <Route path="/app" component={Orphanages}/>
+                <Route path="/app" component={OrphanagesMap}/>
+                <Route path="/orphanages/create" component={CreateOrphanage}/>
+                <Route path="/orphanages/:id" component={Orphanage}/>
             </Switch>
            
         </BrowserRouter>
